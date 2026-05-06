@@ -1,0 +1,151 @@
+:root {
+    --main-blue: #0284c7;
+    --dark-blue: #0c4a6e;
+    --light-blue: #f0f9ff;
+    --accent: #38bdf8;
+    --white: #ffffff;
+    --gray: #64748b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: linear-gradient(135deg, var(--dark-blue), var(--main-blue));
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 0 0 40px 40px;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-box {
+    background: var(--light-blue);
+    border-left: 4px solid var(--main-blue);
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.score-badge {
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.score-badge.blue { background: #e0f2fe; color: #0369a1; }
+.score-badge.gold { background: #fef3c7; color: #92400e; border: 1px solid #f59e0b; }
+
+/* Checklist */
+.checklist-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    background: #f1f5f9;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.check-item:hover { background: #e2e8f0; }
+
+.check-item input { margin-right: 12px; transform: scale(1.2); }
+
+/* Progress Bar */
+.progress-wrapper { margin-top: 30px; }
+.progress-bar-bg {
+    background: #e2e8f0;
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+#progress-fill {
+    background: var(--main-blue);
+    width: 0%;
+    height: 100%;
+    transition: width 0.4s ease;
+}
+
+/* Deadline & CTA */
+.deadline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.deadline-item { text-align: center; }
+.deadline-item h4 { margin: 0; color: var(--gray); }
+.deadline-item p { font-size: 1.2rem; font-weight: bold; margin: 5px 0; color: var(--dark-blue); }
+
+.contact-section {
+    text-align: center;
+    margin-top: 40px;
+    padding: 30px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.wa-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.3);
+    transition: 0.3s;
+}
+
+.wa-btn img { width: 24px; margin-right: 10px; filter: brightness(0) invert(1); }
+.wa-btn:hover { transform: translateY(-3px); background: #128c7e; }
+
+footer { text-align: center; padding: 40px; color: var(--gray); font-size: 0.9rem; }
+
+/* Mobile View */
+@media (max-width: 600px) {
+    .grid, .checklist-container, .deadline-grid { grid-template-columns: 1fr; }
+}
